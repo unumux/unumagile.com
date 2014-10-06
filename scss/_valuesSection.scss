@@ -1,0 +1,62 @@
+#values {
+	background: #fff;
+	color: #333;
+	padding-top:10px;
+	padding-bottom:20px;
+	position:relative;
+
+	h3 {
+		color:#9B9B9B;
+		font-family: 'Source Sans Pro';
+
+		&:hover {
+			cursor:pointer;
+		}
+
+		span {
+			color: #9EB7C6;
+		}
+
+		span + span {
+			color: #606060;
+			display:block;
+			font-weight:600;
+			font-size:1.7em;
+			width:100%;
+		}
+	}
+
+	p {
+		max-height:0;
+		transition:all 0.4s ease 0s;
+		overflow:hidden;
+	}
+
+	.open + p {
+		max-height:1000px;
+	}
+
+	@media (min-width:$screen-md) {
+		background:url('../images/women_glasses_agile.jpg') top center no-repeat;
+		background-size:cover;
+		padding:150px 15px;
+		text-align:left;
+
+		p {
+			margin:20px 0 0;
+			max-height:1000px;
+		}
+
+		h3 {
+			font-size:2.5em;
+
+			span {
+				color: $steel-blue;
+			}
+
+			&:hover {
+				cursor:auto;
+			}
+		}
+	}
+}

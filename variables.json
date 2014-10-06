@@ -1,0 +1,59 @@
+{
+	"build": {
+		"bowerJquery": "bower_components/jquery/dist/*.js",
+		"jqueryDest": "js/jquery/",
+		"bowerBootstrap": "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/*",
+		"bootstrapDest": "scss/bootstrap/",
+		"bowerMixins" : "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/*",
+		"mixinsDest": "scss/bootstrap/mixins/",
+		"cleanFolders": ["bower_components"]
+	},
+
+	"watch": {
+		"scss" : ["scss/*.scss"],
+		"js" : ["js/*.js"],
+		"html": ["*.html"]
+	},
+
+	"debug": {
+		"js" : ["js/script-agile.js"],
+		"jsSource" : [
+		
+    	],
+    	"jsPath" : [
+			"//localhost:35729/livereload.js",
+			"js/jquery/jquery.min.js",
+			"js/bootstrap/transition.js",
+			"js/bootstrap/carousel.js",
+			"js/bootstrap/scrollspy.js",
+			"js/script-agile.js"
+    	],
+    	"cssPath" : "css/site.css",
+    	"proxy" : "localfiles.com/agile",
+    	"masterLayout" : "index.html"
+	},
+
+	"dev": {
+		"js" : "js/site.js",
+		"jsSource" :  [
+			"js/jquery/jquery.min.js",
+			"js/bootstrap/transition.js",
+			"js/bootstrap/carousel.js",
+			"js/bootstrap/scrollspy.js",
+			"js/script-agile.js"
+		],
+		"jsPath" : "js/site.js",
+		"scss" : "scss/site.scss",
+		"css" : "css/site.css",
+		"modernizr": "js/modernizr/modernizr-dev.js",
+		"html" : "index.html"
+	}, 
+
+	"release": {
+		"js" : "js/site.min.js",
+		"jsPath" : "js/site.min.js",
+		"css" : "css/site.min.css",
+		"cssPath" : "css/site.min.css",
+		"modernizr": "js/modernizr/modernizr-custom.js"
+	}
+}

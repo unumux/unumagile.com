@@ -1,0 +1,37 @@
+#gettingStarted {
+	a {
+		border-bottom:1px solid #0099CC;
+		color:#fff;
+		display:block;
+		padding:10px 0;
+		transition:color 0.2s ease 0s;
+
+		&:hover {
+			background: url('../images/icons/link_icon.svg') no-repeat 90% center;
+			color: $orange;
+			text-decoration:none;
+		}
+	}
+
+	h3 {
+		color: #27A7BA;
+		margin-top:40px;
+
+		@media(min-width:$screen-md) {
+			color:#fff;
+			margin-top:24px;
+		}
+	}
+
+	a.video-link {
+		&:hover {
+			background: url('../images/icons/video_icon.svg') no-repeat 90% center;
+		}
+	}
+
+	ul {
+		list-style-type:none;
+		padding:0;
+		width:100%;
+	}
+}

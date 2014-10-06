@@ -1,0 +1,76 @@
+h1 {
+	font-size:1.3em;
+}
+
+h2 {
+	margin:0;
+	font-size:1.6em; 
+	line-height:46px;
+}
+
+h2, h3, h4 {
+	font-family: 'Ubuntu';
+}
+
+h3 {
+	font-size:1.3em;
+
+	@media (min-width:$screen-md) {
+		font-size:1.6em;
+	}
+}
+
+h4 {
+	font-size:1.1em;
+
+	@media (min-width:$screen-md) {
+		font-size:1.3em;
+	}
+}
+
+h2, h3, h4 {
+	color: #fff;
+	font-weight:400;
+}
+
+dl {
+	float:left;
+	width:100%;
+}
+
+dt {
+	font-weight:400;
+	cursor:pointer;
+	margin:0 -15px;
+	padding:10px 15px;
+
+	&:hover {
+		background:saturate(lighten($steel-blue, 2%), 1%);
+	}
+}
+
+
+dt.open {
+	background:saturate(lighten($steel-blue, 2%), 1%);
+}
+
+dd {
+	background: desaturate(lighten($steel-blue, 20%), 25%);
+	display:block;
+	max-height:0;
+	margin:0 -15px;
+	overflow:hidden;
+	padding:0 15px;
+	transition:all 0.4s ease 0s;
+}
+
+.open + dd {
+	max-height:1000px;
+	padding:20px 15px;
+}
+
+@media (min-width:$screen-md) {
+	dd, dt {
+		display:block;
+	}
+}

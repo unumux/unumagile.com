@@ -1,0 +1,51 @@
+.landingContent {
+	background: url('../images/agile_people_600.jpg') no-repeat;
+	background-size:cover;
+	min-height:250px;
+	position:relative;
+
+	@media (min-width:601px) {
+		background-image: url('../images/agile_people_1024.jpg');
+		min-height:450px;
+	}
+
+	@media (min-width:1024px) {
+		background-image: url('../images/agile_people.jpg');
+		min-height:600px;
+	}
+
+	@media (min-width:$screen-lg) {
+		min-height:700px;
+	}
+
+	h1 {
+		margin:0;
+		visibility: hidden;
+		text-align:center;
+
+		@media (min-width:$screen-sm) {
+			position:absolute;
+			top:50%;
+			left:50%;
+			margin:-55px 0 0 -179px;
+			visibility: visible;
+		}
+	}
+}
+
+.scroll-down {
+	background: url('../images/icons/arrow-down.svg') no-repeat;
+	background-size:contain;
+	bottom:20px;
+	display:none;
+	font-size:0px;
+	height:55px;
+	left:50%;
+	margin:0 0 0 -48px;
+	position:absolute;
+	width:96px;
+
+	@media (min-width:$screen-md) {
+		display:block;	
+	}
+}

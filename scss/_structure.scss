@@ -1,0 +1,55 @@
+body {
+	background: $steel-blue;
+	color: #fff;
+	overflow-x:hidden;
+	position:relative;
+	transition: all 0.4s ease 0s;
+
+	@media (min-width: $screen-md) {
+		padding:64px 0 0;
+	}
+}
+
+.nav-open .wrapper {
+	left:-45%;
+
+	@media (min-width:$screen-md) {
+		left:0;
+	}
+}
+
+.wrapper {
+	position: absolute;
+	top:0;
+	left:0;
+    transition: all 0.4s ease 0s;
+    width:100%;
+
+    @media (min-width:$screen-md) {
+    	position:relative;
+    }
+}
+
+section {
+	text-align:center;
+	padding:0 15px;
+	@extend .row;
+}
+
+main {
+	@extend .container;
+}
+
+footer {
+	margin:40px 0 0;
+	padding:20px 0;
+	text-align:center;
+
+	img {
+		display:inline-block;
+
+		&:first-child {
+			margin:0 20px 0 0;
+		}
+	}
+}

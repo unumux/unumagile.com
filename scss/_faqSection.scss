@@ -1,0 +1,48 @@
+#FAQ {
+	position:relative;
+
+	h3 {
+		color: #F5A523;
+		display:block;
+		padding:10px;
+	}
+
+	a {
+		color: #fff;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration:none;
+		}
+	}
+
+	p {
+		@include make-md-column(8);
+		@include make-md-column-offset(2);
+	}
+
+	@media (min-width:$screen-md) {
+		padding:330px 15px 0;
+
+		&:before {
+			content:'';
+		  	display:block;
+		  	width:4px;
+		  	height:300px;
+		  	margin: 0 0 0 -2px;
+		  	background:#F5A523;
+		  	position:absolute;
+		  	top:30px;
+		  	left:50%;
+		}
+
+		h3 {
+			border-color: $orange;
+			border-width:4px 0 4px;
+			border-style:solid;
+			color: #fff;
+			margin:0 0 30px;
+			width:10%;
+		}
+	}
+}
