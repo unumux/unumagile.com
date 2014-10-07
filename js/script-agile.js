@@ -1,44 +1,44 @@
 function openDropdown () {
-	if ($(this).hasClass('open')) {
-		$(this).removeClass('open');
+	if ($(this).hasClass('js-open')) {
+		$(this).removeClass('js-open');
 	}
 	else {
-		$(this).addClass('open');
+		$(this).addClass('js-open');
 	}
 }
 
 $('.nav-toggle').on("click", function(event){
 	event.preventDefault();
-	if ($('body').hasClass('nav-open')) {
-		$('body').removeClass('nav-open');
+	if ($('body').hasClass('js-nav-open')) {
+		$('body').removeClass('js-nav-open');
 	}
 	else {
-		$('body').addClass('nav-open');
+		$('body').addClass('js-nav-open');
 	}
 });
 
 $('.dropdown-toggle').on("click", function(event){
 	event.preventDefault();
-	if ($('#mainNav').hasClass('dropdown-open')) {
-		$('#mainNav').removeClass('dropdown-open');
+	if ($('#mainNav').hasClass('js-dropdown-open')) {
+		$('#mainNav').removeClass('js-dropdown-open');
 	}
 	else {
-		$('#mainNav').addClass('dropdown-open');
+		$('#mainNav').addClass('js-dropdown-open');
 	}
 });
 
 $('#mainNav a').not('.dropdown-toggle').on('click', function(event){
-	$('body').removeClass('nav-open');
+	$('body').removeClass('js-nav-open');
 });
 
 $('.video-btn').on('click', function(event){
 	event.preventDefault();
-	$('.video-container').addClass('open');
+	$('.video-container').addClass('js-open');
 });
 
 $('.close-btn').on('click', function(event){
 	event.preventDefault();
-	$('.video-container').removeClass('open');
+	$('.video-container').removeClass('js-open');
 });
 
 $('#values h3, dt').click(openDropdown);

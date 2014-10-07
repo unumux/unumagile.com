@@ -177,7 +177,7 @@ header {
 }
 
 
-#mainNav.dropdown-open{
+#mainNav.js-dropdown-open{
 	ul {
 		margin-top:0;
 	}
@@ -197,7 +197,7 @@ header {
 	}
 } 
 
-.dropdown-open {
+.js-dropdown-open {
 	.dropdown {
 		max-height:500px;
 		visibility: visible;
@@ -239,7 +239,7 @@ header {
 	height:3px;
 }
 
-.nav-open {
+.js-nav-open {
 	#mainNav {
 		right:0;
 	}

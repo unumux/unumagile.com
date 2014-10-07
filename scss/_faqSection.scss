@@ -1,6 +1,10 @@
 #FAQ {
 	position:relative;
 
+	header {
+		z-index:1;
+	}
+
 	h3 {
 		color: #F5A523;
 		display:block;

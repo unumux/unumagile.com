@@ -92,21 +92,14 @@ module.exports = function (grunt) {
       dev: {
         options: {
           ignore: [
-          '.open', 
-            '.dropdown-open', 
-            '.nav-open', 
-            '#benefits .open + ul', 
-            '#mainNav.dropdown-open .dropdown-toggle', 
-            '.video-container.open',
-            '#values .open + p',
-            '.open + dd',
-            '.dropdown-open .dropdown',
-            '.carousel-inner > .next.left',
-            '.carousel-inner  > .next.right',
-            '.carousel-inner  > .active.left',
-            '.carousel-inner  > .active.right',
-            '.carousel-inner  > .next',
-            '.carousel-inner  > .prev'
+            /js.*/,
+            /active.*/,
+            /left.*/,
+            /right.*/,
+            /prev.*/,
+            /next.*/,
+            '.has-success',
+            '.has-error'
           ]
         },
         files: {
@@ -117,21 +110,14 @@ module.exports = function (grunt) {
       release: {
         options: {
           ignore: [
-            '.open', 
-            '.dropdown-open', 
-            '.nav-open', 
-            '#benefits .open + ul', 
-            '#mainNav.dropdown-open .dropdown-toggle', 
-            '.video-container.open',
-            '#values .open + p',
-            '.open + dd',
-            '.dropdown-open .dropdown',
-            '.carousel-inner > .next.left',
-            '.carousel-inner  > .next.right',
-            '.carousel-inner  > .active.left',
-            '.carousel-inner  > .active.right',
-            '.carousel-inner  > .next',
-            '.carousel-inner  > .prev'
+            /js.*/,
+            /active.*/,
+            /left.*/,
+            /right.*/,
+            /prev.*/,
+            /next.*/,
+            '.has-success',
+            '.has-error'
           ],
           report: 'min'
         },
