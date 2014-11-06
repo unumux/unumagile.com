@@ -133,6 +133,11 @@ module.exports = function (grunt) {
         cssFiles: '<%= variables.debug.cssPath %>',
         targetHtml: '<%= variables.debug.masterLayout %>'
       },
+       dev: {
+        jsFiles: '<%= variables.dev.jsPath %>',
+        cssFiles: '<%= variables.debug.cssPath %>',
+        targetHtml: '<%= variables.debug.masterLayout %>'
+      },
       release: {
         jsFiles: '<%= variables.release.jsPath %>',
         cssFiles: '<%= variables.release.cssPath %>',
@@ -142,11 +147,12 @@ module.exports = function (grunt) {
 
     watch: {
       options: {
-        livereload: true
+        livereload: true,
+        spawn: false
       },
       css: {
         files: '<%= variables.watch.scss %>',
-        tasks: ['sass:dev']
+        tasks: ['sass:dev', 'autoprefixer:dev']
       },
       js: {
         files: '<%= variables.watch.js %>',
@@ -179,6 +185,26 @@ module.exports = function (grunt) {
         "outputFile": "<%= variables.release.modernizr %>",
         "parseFiles": true
       }
+    },
+
+    autoprefixer: {
+      dev: {
+         options: {
+          browsers: ['last 2 versions', 'ie 8', 'ie 9']
+        },
+        files: {
+          '<%= variables.dev.css %>' : '<%= variables.dev.css %>'
+        }
+      },    
+
+      release: {
+        options: {
+            browsers: ['last 2 versions', 'ie 8', 'ie 9']
+          },
+          files: {
+            '<%= variables.release.css %>' : '<%= variables.release.css %>'
+          }   
+      }   
     }
 
   });
@@ -193,7 +219,8 @@ module.exports = function (grunt) {
   });
 
   // Pull in the plugins
-   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -228,6 +255,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', ['bower', 'copy', 'clean', 'sass:dev', 'captain_hook:debug']);
   grunt.registerTask('debug', ['captain_hook:debug', 'browserSync', 'watch']);
-  grunt.registerTask('dev', ['sass:dev', 'uncss:dev', 'captain_hook:dev']);
-  grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'captain_hook:release']);
+  grunt.registerTask('dev', ['sass:dev', 'autoprefixer:dev', 'uncss:dev', 'captain_hook:dev']);
+  grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'autoprefixer:release', 'uncss:release', 'captain_hook:release']);
 };

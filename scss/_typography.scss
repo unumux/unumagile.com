@@ -33,6 +33,10 @@ h2, h3, h4 {
 	font-weight:400;
 }
 
+p {
+	max-width:100%;
+}
+
 dl {
 	float:left;
 	width:100%;
@@ -67,6 +71,10 @@ dd {
 .js-open + dd {
 	max-height:1000px;
 	padding:20px 15px;
+}
+
+.text-left {
+	text-align: left;
 }
 
 @media (min-width:$screen-md) {

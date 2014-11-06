@@ -26,29 +26,27 @@
 		}
 	}
 
-	p {
-		max-height:0;
-		transition:all 0.4s ease 0s;
-		overflow:hidden;
-	}
-
-	.js-open + p {
-		max-height:1000px;
-	}
-
 	@media (min-width:$screen-md) {
 		background:url('../images/women_glasses_agile.jpg') top center no-repeat;
 		background-size:cover;
-		padding:150px 15px;
+		padding:200px 15px 150px;
 		text-align:left;
+		position:relative;
 
-		p {
-			margin:20px 0 0;
-			max-height:1000px;
+		&:after {
+			content:'';
+		  	display:block;
+		  	width:4px;
+		  	height:400px;
+		  	margin: 0 0 40px -2px;
+		  	background:#A1D285;
+		  	position:absolute;
+		  	top:105%;
+		  	left:50%;
 		}
 
 		h3 {
-			font-size:2.5em;
+			font-size:2.8em;
 
 			span {
 				color: $steel-blue;

@@ -41,8 +41,31 @@ $('.close-btn').on('click', function(event){
 	$('.video-container').removeClass('js-open');
 });
 
-$('#values h3, dt').click(openDropdown);
+$('dt').click(openDropdown);
 
+$('#benefits h4').click(function(){
+	$('#benefits h4').not(this).removeClass('js-open');
+
+	if ($(this).hasClass('js-open')) {
+		$(this).removeClass('js-open');
+	}
+	else {
+		$(this).addClass('js-open');
+	}
+
+	if ($(window).width() > '991') {
+		var copy = $(this).next().clone();
+		$('.text-front-container, .text-back-container').html('');
+		if ($('.text-front-container').hasClass('js-flip')) {
+			$('.text-front-container').removeClass('js-flip');
+			$('.text-back-container').html(copy).addClass('js-flip');
+		}
+		else {
+			$('.text-back-container').removeClass('js-flip');
+			$('.text-front-container').html(copy).addClass('js-flip');
+		}
+	}
+});
 
 ///////////////////////
 //Form Validation
@@ -132,40 +155,34 @@ $(function() {
   });
 });
 
+
+
 ////////////////////////////////////////////////////////////
 //Carousel to intialize only after certain window size
 ///////////////////////////////////////////////////////////
 $(window).resize(function(){
 	if ($(window).width() > '991') {
-		$('.carousel').carousel();
+		$('.carousel').carousel({
+			pause: ""
+		});
 	}
 })
 
 $(document).ready(function(){
-
-
 	if ($(window).width() > '991') {
-		$('.carousel').carousel();
+		$('.carousel').carousel({
+			pause: ""
+		});
 	}
-
-	if (Modernizr.touch) {
-		var hasTouch =  true;
-
-	}
-	else {
-		var hasTouch = false;
-	}
-
-	if (hasTouch = false) {
-		$('#benefits h4').hover(openDropdown);
-	}
-	else {
-		$('#benefits h4').click(openDropdown);
-	}
-
-	if ($(window).width() > '1200') {
-		$('#benefits h4').hover(openDropdown);
-	}
-
-
 });
+
+var uagent = navigator.userAgent.toLowerCase();
+if (uagent.search("iphone") > -1 ||
+    uagent.search("ipod") > -1 ||
+    uagent.search("ipad") > -1 ||
+    uagent.search("appletv") > -1) {
+       $('html').addClass('js-ios');   
+} 
+else {
+
+}

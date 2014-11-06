@@ -29,7 +29,7 @@
 			"js/script-agile.js"
     	],
     	"cssPath" : "css/site.css",
-    	"proxy" : "localfiles.com/agile",
+    	"proxy" : "localfiles.com/unumagile.com/",
     	"masterLayout" : "index.html"
 	},
 
