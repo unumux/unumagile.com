@@ -21,6 +21,23 @@
 		}
 	}
 
+	@media (min-width: $screen-md) {
+		padding-bottom: 330px;
+		position:relative;
+
+		&:after {
+			content:'';
+		  	display:block;
+		  	width:4px;
+		  	height:300px;
+		  	margin: 0 0 0 -2px;
+		  	background:$orange;
+		  	position:absolute;
+		  	bottom:0;
+		  	left:50%;
+		}
+	}
+
 	h3 {
 		color: #27A7BA;
 		margin-top:40px;

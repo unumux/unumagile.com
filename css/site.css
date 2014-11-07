@@ -2807,6 +2807,8 @@ iframe {
         -ms-transform: translateX(0);
             transform: translateX(0); }
 @media (min-width: 992px) {
+  .js-ios #benefits {
+    background: transparent; }
   .js-ios #benefits .js-open + p {
     background-color: transparent;
     display: block; } }
@@ -2823,6 +2825,20 @@ iframe {
     text-decoration: none; }
     #gettingStarted a:hover span {
       border-color: #F5A523; }
+@media (min-width: 992px) {
+  #gettingStarted {
+    padding-bottom: 330px;
+    position: relative; }
+    #gettingStarted:after {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 300px;
+      margin: 0 0 0 -2px;
+      background: #F5A523;
+      position: absolute;
+      bottom: 0;
+      left: 50%; } }
 #gettingStarted h3 {
   color: #27A7BA;
   margin-top: 40px; }
@@ -2883,17 +2899,7 @@ iframe {
         margin-left: 16.6666666667%; } }
   @media (min-width: 992px) {
     #FAQ {
-      padding: 330px 15px 0; }
-      #FAQ:before {
-        content: '';
-        display: block;
-        width: 4px;
-        height: 300px;
-        margin: 0 0 0 -2px;
-        background: #F5A523;
-        position: absolute;
-        top: 30px;
-        left: 50%; }
+      padding: 0 15px 0; }
       #FAQ h3 {
         border-color: #F5A523;
         border-width: 4px 0 4px;
