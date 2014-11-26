@@ -546,6 +546,13 @@ $('#benefits h4').click(function(){
 //Form Validation
 ///////////////////////
 
+$('input, textarea').on('change', function(){
+	if ($(this).parent().hasClass('has-error')) {
+		$(this).parent().removeClass('has-error');
+		$(this).next().html('');
+	}
+});
+
 $('form').on('submit', function(e) {
   e.preventDefault();
   $('#submit-btn').attr('disabled', 'disabled');
