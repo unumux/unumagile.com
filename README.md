@@ -1,3 +1,3 @@
 unumagile.com
 =============
-Tis the agile site. It does things.
+Tis the agile site. It does agile things.
