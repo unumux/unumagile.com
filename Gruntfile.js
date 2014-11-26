@@ -99,7 +99,9 @@ module.exports = function (grunt) {
             /prev.*/,
             /next.*/,
             '.has-success',
-            '.has-error'
+            '.has-error',
+            '#mainNav a.btn-platinum',
+            '.btn-platinum'
           ]
         },
         files: {
@@ -117,7 +119,9 @@ module.exports = function (grunt) {
             /prev.*/,
             /next.*/,
             '.has-success',
-            '.has-error'
+            '.has-error',
+            '#mainNav a.btn-platinum',
+            '.btn-platinum'
           ],
           report: 'min'
         },
@@ -174,7 +178,9 @@ module.exports = function (grunt) {
         src: '<%= variables.debug.cssPath %>'
       },
       options: {
-        proxy: '<%= variables.debug.proxy %>',
+        server: {
+          baseDir: './'
+        },
         watchTask: true
       }
     },

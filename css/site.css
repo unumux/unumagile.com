@@ -2011,6 +2011,10 @@ label {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
@@ -2231,6 +2235,23 @@ header {
     #mainNav a:hover, #mainNav a .active {
       background: #F2F4F5;
       text-decoration: none; }
+  #mainNav a.close {
+    display: none;
+    padding: 5px; }
+    @media (min-width: 992px) {
+      #mainNav a.close {
+        display: block;
+        float: left; } }
+  #mainNav a.btn-platinum {
+    display: none;
+    color: #1F3340;
+    border-width: 0;
+    padding: 5px 15px; }
+    #mainNav a.btn-platinum:active, #mainNav a.btn-platinum:focus, #mainNav a.btn-platinum:hover {
+      background: #D5DCDF; }
+    @media (min-width: 992px) {
+      #mainNav a.btn-platinum {
+        display: block; } }
   #mainNav ul {
     list-style-type: none;
     margin: 30px 0 0;
@@ -2471,7 +2492,7 @@ header {
       width: 45px; } }
 
 iframe {
-  display: none;
+  display: none
   /* Safari position fixed issue */ }
 
 .video-container {

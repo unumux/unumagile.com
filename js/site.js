@@ -497,6 +497,11 @@ $('.dropdown-toggle').on("click", function(event){
 	}
 });
 
+$('.close').on("click", function(event){
+	event.preventDefault();
+	$('#mainNav').removeClass('js-dropdown-open');
+});
+
 $('#mainNav a').not('.dropdown-toggle').on('click', function(event){
 	$('body').removeClass('js-nav-open');
 });
@@ -580,7 +585,7 @@ $('form').on('submit', function(e) {
 		$.post('http://unumagile.com/form', $(this).serialize())
 		    .done(function() {
 		      $('form').css('visibility', 'hidden');
-			  $('.feedback').html('Your submission was completed successfully. Thank you.').addClass('has-success');
+			  $('.feedback').html('<p>Your submission was completed successfully. Thank you. </p> <a class="btn btn-platinum close" href="#">Close</a>').addClass('has-success');
 		    })
 		  .fail(function(data) {    
 		  	console.log(data.responseJSON.ModelState);

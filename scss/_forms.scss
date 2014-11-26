@@ -59,6 +59,12 @@ label {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 	position:absolute;
 	top:0;
 	left:0;
