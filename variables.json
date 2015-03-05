@@ -23,6 +23,7 @@
     	"jsPath" : [
 			"//localhost:35729/livereload.js",
 			"js/jquery/jquery.min.js",
+			"js/froogaloop/froogaloop2.min.js",
 			"js/bootstrap/transition.js",
 			"js/bootstrap/carousel.js",
 			"js/bootstrap/scrollspy.js",
@@ -37,6 +38,7 @@
 		"js" : "js/site.js",
 		"jsSource" :  [
 			"js/jquery/jquery.min.js",
+			"js/froogaloop/froogaloop2.min.js",
 			"js/bootstrap/transition.js",
 			"js/bootstrap/carousel.js",
 			"js/bootstrap/scrollspy.js",

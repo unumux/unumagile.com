@@ -9,7 +9,6 @@ header {
 	}
 
 	@media(min-width:$screen-md) {
-		background: $nav-bg-screen-md-color;
 		display: -webkit-box;
 	    display: -ms-flexbox;
 	    display: -webkit-flex;
@@ -27,6 +26,12 @@ header {
 		top:0;
 		width:100%;
 		z-index:1000;
+	}
+}
+
+.wrapper > header {
+	@media(min-width:$screen-md) {
+		background: $nav-bg-screen-md-color;
 	}
 }
 
@@ -55,7 +60,7 @@ header {
 		}
 	}
 
-	a.close {
+	a.js-form-close {
 		display:none;
 		padding:5px;
 
@@ -214,6 +219,10 @@ header {
 		background: $platinum;
 	}
 
+	.has-success {
+		opacity:1;
+	}
+
 	@media (min-width:$screen-md) {
 		.dropdown-toggle {
 			background:#2D99CC;
@@ -275,9 +284,11 @@ header {
 
 .feedback {
 	color: $steel-blue;
-	padding:0 15px;
+	margin-top:10px;
 
 	@media (min-width:$screen-md) {
 		color: #fff;
+		margin-top:0;
+		padding:0 15px;
 	}
 }

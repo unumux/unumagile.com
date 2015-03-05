@@ -1,3 +1,6 @@
+    var player = $("#vimeoPlayer")[0];
+        froogaloop = $f(player);
+
 function openDropdown () {
 	if ($(this).hasClass('js-open')) {
 		$(this).removeClass('js-open');
@@ -27,7 +30,15 @@ $('.dropdown-toggle').on("click", function(event){
 	}
 });
 
-$('.close').on("click", function(event){
+$(document).click(function(event){
+	if(!$(event.target).closest('.dropdown-li').length) {
+		if($('#mainNav').hasClass('js-dropdown-open')) {
+			$('#mainNav').removeClass('js-dropdown-open');
+		}
+	}
+});
+
+$('.close').click(function(event){
 	event.preventDefault();
 	$('#mainNav').removeClass('js-dropdown-open');
 });
@@ -44,6 +55,8 @@ $('.video-btn').on('click', function(event){
 $('.close-btn').on('click', function(event){
 	event.preventDefault();
 	$('.video-container').removeClass('js-open');
+	console.log(froogaloop);
+	 froogaloop.api('pause');
 });
 
 $('dt').click(openDropdown);
@@ -85,8 +98,7 @@ $('input, textarea').on('change', function(){
 
 $('form').on('submit', function(e) {
   e.preventDefault();
-  $('#submit-btn').attr('disabled', 'disabled');
-
+ $('#submit-btn').attr('disabled', 'disabled');
   var isValid = true;
 	$('.help-text').html('');
 	$('.form-group').removeClass('has-error');
@@ -119,14 +131,16 @@ $('form').on('submit', function(e) {
 		$('#submit-btn').removeAttr('disabled');
 	}
 	else {
+		$('form').css('visibility', 'hidden');
+	    $('.feedback').html('<p>Your submission was completed successfully. Thank you. </p> <a class="btn btn-platinum js-form-close" href="#">Close</a>').addClass('has-success');
 		$.post('http://unumagile.com/form', $(this).serialize())
 		    .done(function() {
-		      $('form').css('visibility', 'hidden');
-			  $('.feedback').html('<p>Your submission was completed successfully. Thank you. </p> <a class="btn btn-platinum close" href="#">Close</a>').addClass('has-success');
+		     // $('form').css('visibility', 'hidden');
+			 // $('.feedback').html('<p>Your submission was completed successfully. Thank you. </p> <a class="btn btn-platinum js-form-close" href="#">Close</a>').addClass('has-success');
 		    })
 		  .fail(function(data) {    
-		  	console.log(data.responseJSON.ModelState);
-		  	$('.feedback').html('There was a problem submitting your form. Please try again.');
+		  	//console.log(data.responseJSON.ModelState);
+		  	//$('.feedback').html('There was a problem submitting your form. Please try again.');
 		  })
 
 		  $('#submit-btn').removeAttr('disabled');
@@ -198,3 +212,10 @@ if (uagent.search("iphone") > -1 ||
 else {
 
 }
+
+$(function(){
+	$('#mainNav').on('click', '.js-form-close', function(event){
+		event.preventDefault();
+		$('#mainNav').removeClass('js-dropdown-open');
+	});
+});
